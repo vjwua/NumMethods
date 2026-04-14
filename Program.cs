@@ -15,5 +15,21 @@
         Task2.Jacobi(0.0, 0.0, 0.0);
         Console.WriteLine(new string('-', 50));
         Task2.Gauss(0.0, 0.0, 0.0);
+        Console.WriteLine(new string('-', 50));
+        double[] xValues = { 1, 2, 3, 4, 5 };
+        double[] yValues = { 3, 6, 7, 8, 12 };
+
+        for (int i = 0; i < xValues.Length; i++)
+        {
+            double y = Task3.Lagrange(xValues, yValues, xValues[i]);
+            Console.WriteLine($"x = {xValues[i]}, y = {y}");
+        }
+        Console.WriteLine(new string('-', 50));
+        for (double testX = 1.5; testX < 6.0; testX += 1)
+        {
+            double result = Task3.Lagrange(xValues, yValues, testX);
+            Console.WriteLine($"Values at current x = {testX}: y = {result}");
+        }    
+
     }
 }
