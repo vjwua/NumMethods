@@ -29,7 +29,15 @@
         {
             double result = Task3.Lagrange(xValues, yValues, testX);
             Console.WriteLine($"Values at current x = {testX}: y = {result}");
-        }    
+        }
+        Console.WriteLine(new string('-', 50));
+        double[] xx = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
+        double[] yy = { -2, 0.2, 1.8, 4.2, 5.8, 8.2, 10.2, 12.2, 13.8 };
 
+        var (k, b) = Task4.ComputeCoefficients(xx, yy);
+        double r2 = Task4.ComputeR2(xx, yy, k, b);
+
+        Task4.PrintSummary(k, b, r2);
+        Task4.PrintComparisonTable(xx, yy, k, b);
     }
 }
